@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 import { ApiDefinition } from "../../../components/api/api.component";
 import { DatepickerMode } from "ng2-semantic-ui";
-
+// exampleStandardTemplate
 const exampleStandardTemplate = `
 <div class="ui form">
     <div class="field">
@@ -83,7 +83,7 @@ const exampleMobileFallbackTemplate = `
     templateUrl: "./datepicker.page.html"
 })
 export class DatepickerPage {
-    public api:ApiDefinition = [
+    public api: ApiDefinition = [
         {
             selector: "[suiDatepicker]",
             properties: [
@@ -91,7 +91,7 @@ export class DatepickerPage {
                     name: "pickerMode",
                     type: "DatepickerMode",
                     description: "Specifies the mode for the datepicker. Options are: <code>datetime</code>, " +
-                                 "<code>date</code>, <code>time</code>, <code>month</code> & <code>year</code>.",
+                        "<code>date</code>, <code>time</code>, <code>month</code> & <code>year</code>.",
                     defaultValue: "datetime"
                 },
                 {
@@ -114,7 +114,7 @@ export class DatepickerPage {
                     name: "pickerFirstDayOfWeek",
                     type: "number",
                     description: "Sets the first day of the week when displaying dates in a month. " +
-                                 "Can be from <code>0</code> (Sunday) to <code>6</code> (Saturday).",
+                        "Can be from <code>0</code> (Sunday) to <code>6</code> (Saturday).",
                     defaultValue: "0"
                 },
                 {
@@ -171,13 +171,13 @@ export class DatepickerPage {
             ]
         }
     ];
-    public exampleStandardTemplate:string = exampleStandardTemplate;
-    public exampleButtonTemplate:string = exampleButtonTemplate;
-    public exampleMinMaxTemplate:string = exampleMinMaxTemplate;
-    public exampleMobileFallbackTemplate:string = exampleMobileFallbackTemplate;
+    public exampleStandardTemplate: string = exampleStandardTemplate;
+    public exampleButtonTemplate: string = exampleButtonTemplate;
+    public exampleMinMaxTemplate: string = exampleMinMaxTemplate;
+    public exampleMobileFallbackTemplate: string = exampleMobileFallbackTemplate;
 
-    public cssInclude:string =
-`<link rel="stylesheet" href="https://unpkg.com/semantic-ui-calendar/dist/calendar.min.css">`;
+    public cssInclude: string =
+        `<link rel="stylesheet" href="https://unpkg.com/semantic-ui-calendar/dist/calendar.min.css">`;
 }
 
 @Component({
@@ -185,26 +185,26 @@ export class DatepickerPage {
     template: exampleStandardTemplate
 })
 export class DatepickerExampleStandard {
-    public firstDayOfWeek:number = 1;
+    public firstDayOfWeek: number = 1;
 
-    public datepickerModes:string[] = ["datetime", "date", "time", "month", "year"];
-    public mode:DatepickerMode = DatepickerMode.Datetime;
-    public date:Date;
+    public datepickerModes: string[] = ["datetime", "date", "time", "month", "year"];
+    public mode: DatepickerMode = DatepickerMode.Datetime;
+    public date: Date;
 }
 
 @Component({
     selector: "example-datepicker-button",
     template: exampleButtonTemplate
 })
-export class DatepickerExampleButton {}
+export class DatepickerExampleButton { }
 
 @Component({
     selector: "example-datepicker-min-max",
     template: exampleMinMaxTemplate
 })
 export class DatepickerExampleMinMax {
-    public min:Date;
-    public max:Date;
+    public min: Date;
+    public max: Date;
 
     constructor() {
         const today = new Date();
@@ -219,13 +219,13 @@ export class DatepickerExampleMinMax {
     template: exampleMobileFallbackTemplate
 })
 export class DatepickerExampleMobileFallback {
-    public date:Date = new Date();
+    public date: Date = new Date();
 
-    public unset():void {
+    public unset(): void {
         this.date = undefined;
     }
 
-    public today():void {
+    public today(): void {
         this.date = new Date();
     }
 }
